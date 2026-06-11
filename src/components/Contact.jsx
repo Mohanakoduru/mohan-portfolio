@@ -24,11 +24,11 @@ const Contact = () => {
     'w-full bg-transparent border-b border-white/40 pb-3 text-lg focus:outline-none focus:border-white transition-colors placeholder-white/80 font-medium rounded-none';
 
   return (
-    <section ref={ref} id="contact" className="bg-[#07060d] w-full min-h-screen relative overflow-hidden flex items-end pt-32 border-t border-white/5">
+    <section ref={ref} id="contact" className="w-full min-h-screen relative overflow-hidden flex items-end pt-32" style={{ background: 'linear-gradient(160deg, #2c1a12 0%, #3a261b 100%)' }}>
       {/* Huge background word */}
       <motion.div style={{ y }} className="absolute top-0 left-0 w-full h-full flex flex-col justify-start items-center overflow-hidden pointer-events-none z-0 pt-16 md:pt-12">
         <h1
-          className="text-[25vw] leading-[0.75] font-black uppercase tracking-tighter select-none scale-y-[1.6] origin-top text-white/[0.04]"
+          className="text-[25vw] leading-[0.75] font-black uppercase tracking-tighter select-none scale-y-[1.6] origin-top text-white/[0.05]"
           style={{ fontFamily: "'Impact', 'Arial Black', sans-serif" }}
         >
           Contact

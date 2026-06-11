@@ -1,14 +1,24 @@
 @import "tailwindcss";
 
 /* ============================================================
-   THEME — change --accent here to re-skin the whole site.
+   THEME — warm earthy palette.
+   #B08401 gold · #D49E8D clay · #DED1BD beige · #FAF6F2 cream · #683B2B brown
    ============================================================ */
 :root {
-  --accent: #7c3aed;        /* violet-600 — primary accent  */
-  --accent-bright: #a855f7; /* violet-500 — highlights      */
-  --accent-soft: #8b5cf6;
-  --accent-glow: rgba(124, 58, 237, 0.55);
-  --bg: #07060d;            /* near-black with a violet tint */
+  --accent: #b08401;          /* mustard gold — primary accent */
+  --accent-bright: #c79a16;   /* brighter gold — highlights    */
+  --accent-2: #d49e8d;        /* dusty clay / rose — secondary */
+  --accent-soft: #d49e8d;
+  --accent-glow: rgba(176, 132, 1, 0.35);
+
+  --bg: #faf6f2;              /* cream — main background        */
+  --bg-alt: #ded1bd;          /* warm beige — alt sections      */
+  --bg-dark: #2c1a12;        /* deep espresso — dark sections  */
+  --bg-dark-2: #683b2b;      /* brown                          */
+
+  --text: #3a261b;           /* dark brown — primary text      */
+  --text-soft: #6b5446;      /* muted brown — body text        */
+  --border: rgba(104, 59, 43, 0.16);
 }
 
 @theme {
@@ -37,20 +47,20 @@ body {
   margin: 0;
   padding: 0;
   background-color: var(--bg);
-  color: #fff;
+  color: var(--text);
   font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 }
 
 /* Custom scrollbar */
 ::-webkit-scrollbar { width: 10px; }
-::-webkit-scrollbar-track { background: #0a0815; }
+::-webkit-scrollbar-track { background: #ece3d6; }
 ::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 6px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--accent-bright); }
 
 /* Selection */
 ::selection { background: var(--accent); color: #fff; }
 
-/* AOS custom drop-bounce (kept from reference, used by the ID badge) */
+/* AOS custom drop-bounce */
 [data-aos="drop-bounce"] { opacity: 0; }
 [data-aos="drop-bounce"].aos-animate {
   animation: dropBounce 1.2s cubic-bezier(0.28, 0.84, 0.42, 1) forwards;
@@ -64,9 +74,9 @@ body {
   100% { transform: translateY(0); opacity: 1; }
 }
 
-/* Animated gradient text */
+/* Animated gradient text (gold shimmer on light bg) */
 .text-gradient {
-  background: linear-gradient(90deg, #fff, var(--accent-bright), #fff);
+  background: linear-gradient(90deg, var(--accent), var(--accent-2), var(--accent));
   background-size: 200% auto;
   -webkit-background-clip: text;
   background-clip: text;
@@ -75,22 +85,36 @@ body {
 }
 @keyframes shine { to { background-position: 200% center; } }
 
+/* Animated gradient text — light variant for dark sections */
+.text-gradient-light {
+  background: linear-gradient(90deg, #fff, var(--accent-2), #fff);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 5s linear infinite;
+}
+
 /* Outlined hero text */
 .text-stroke {
   color: transparent;
-  -webkit-text-stroke: 1.5px var(--accent-bright);
+  -webkit-text-stroke: 1.5px var(--accent);
 }
 
-/* Subtle dotted grid background helper */
+/* Subtle dotted grid background helper (brown dots) */
 .bg-dotgrid {
-  background-image: radial-gradient(rgba(255,255,255,0.06) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(104, 59, 43, 0.10) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+.bg-dotgrid-light {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.10) 1px, transparent 1px);
   background-size: 22px 22px;
 }
 
-/* Painterly "Ghibli-ish" stylization for the hero portrait */
+/* Painterly stylization for the hero portrait */
 .ghibli-portrait {
-  filter: saturate(1.35) contrast(1.06) brightness(1.06)
-          drop-shadow(0 25px 60px rgba(124, 58, 237, 0.45));
+  filter: saturate(1.25) contrast(1.04) brightness(1.04)
+          drop-shadow(0 25px 60px rgba(176, 132, 1, 0.35));
   animation: floatPortrait 7s ease-in-out infinite;
 }
 @keyframes floatPortrait {
@@ -100,8 +124,8 @@ body {
 
 /* Speaking glow ring shown while the intro voice plays */
 @keyframes speakPulse {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(168, 85, 247, 0.0); }
-  50% { box-shadow: 0 0 80px 10px rgba(168, 85, 247, 0.55); }
+  0%, 100% { box-shadow: 0 0 0 0 rgba(176, 132, 1, 0.0); }
+  50% { box-shadow: 0 0 80px 10px rgba(176, 132, 1, 0.5); }
 }
 .is-speaking { animation: speakPulse 1.4s ease-in-out infinite; }
 
@@ -113,7 +137,7 @@ body {
 .eq-bar {
   width: 4px;
   border-radius: 4px;
-  background: var(--accent-bright);
+  background: var(--accent);
   transform-origin: bottom;
   animation: eq 0.9s ease-in-out infinite;
 }

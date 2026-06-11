@@ -17,15 +17,19 @@ const Navbar = () => {
         isOpen
           ? 'py-4'
           : isScrolled
-          ? 'py-3 bg-[#07060d]/70 backdrop-blur-md border-b border-white/5'
+          ? 'py-3 bg-[#faf6f2]/80 backdrop-blur-md border-b border-[var(--border)] shadow-sm'
           : 'py-6 bg-transparent'
       }`}
       style={isOpen ? { background: 'var(--accent)' } : undefined}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
         {/* Logo */}
-        <a href="#home" className="text-white text-2xl font-black tracking-tight">
-          {profile.firstName}<span style={{ color: 'var(--accent-bright)' }}>.</span>
+        <a
+          href="#home"
+          className="text-2xl font-black tracking-tight"
+          style={{ color: isOpen ? '#fff' : 'var(--text)' }}
+        >
+          {profile.firstName}<span style={{ color: isOpen ? '#fff' : 'var(--accent)' }}>.</span>
         </a>
 
         {/* Desktop links */}
@@ -34,12 +38,12 @@ const Navbar = () => {
             <a
               key={link}
               href={`#${link.toLowerCase()}`}
-              className="text-white/80 hover:text-white font-medium relative group transition-colors duration-300"
+              className="font-medium relative group transition-colors duration-300 text-[var(--text-soft)] hover:text-[var(--text)]"
             >
               {link}
               <span
                 className="absolute -bottom-1 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full"
-                style={{ background: 'var(--accent-bright)' }}
+                style={{ background: 'var(--accent)' }}
               ></span>
             </a>
           ))}
@@ -51,14 +55,14 @@ const Navbar = () => {
             href={profile.resume}
             target="_blank"
             rel="noreferrer"
-            className="text-white/80 hover:text-white font-medium text-sm transition-colors"
+            className="font-medium text-sm transition-colors text-[var(--text-soft)] hover:text-[var(--text)]"
           >
             Résumé
           </a>
           <a
             href="#contact"
-            className="px-6 py-2.5 rounded-full text-white font-semibold transition-all duration-300 backdrop-blur-md"
-            style={{ background: 'var(--accent)', boxShadow: '0 0 18px var(--accent-glow)' }}
+            className="px-6 py-2.5 rounded-full text-white font-semibold transition-all duration-300 hover:scale-105"
+            style={{ background: 'var(--accent)', boxShadow: '0 6px 18px var(--accent-glow)' }}
           >
             Hire Me
           </a>
@@ -67,7 +71,8 @@ const Navbar = () => {
         {/* Mobile hamburger */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden text-white focus:outline-none p-2"
+          className="md:hidden focus:outline-none p-2"
+          style={{ color: isOpen ? '#fff' : 'var(--text)' }}
           aria-label="Toggle menu"
         >
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -93,7 +98,7 @@ const Navbar = () => {
               key={link}
               href={`#${link.toLowerCase()}`}
               onClick={() => setIsOpen(false)}
-              className="text-white hover:text-black font-bold text-lg border-b border-white/20 pb-2 transition-colors"
+              className="text-white font-bold text-lg border-b border-white/25 pb-2 transition-colors hover:pl-1"
             >
               {link}
             </a>
@@ -101,7 +106,7 @@ const Navbar = () => {
           <a
             href="#contact"
             onClick={() => setIsOpen(false)}
-            className="inline-block px-6 py-3 rounded-full bg-white font-black hover:bg-black hover:text-white transition-colors w-full text-center shadow-lg mt-2"
+            className="inline-block px-6 py-3 rounded-full bg-white font-black hover:bg-[var(--bg-dark)] hover:text-white transition-colors w-full text-center shadow-lg mt-2"
             style={{ color: 'var(--accent)' }}
           >
             Hire Me

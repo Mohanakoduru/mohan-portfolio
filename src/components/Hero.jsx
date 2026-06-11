@@ -87,12 +87,12 @@ const Hero = () => {
   }, [introDone, playIntro]);
 
   return (
-    <section id="home" className="relative w-full min-h-screen overflow-hidden bg-[#07060d]">
+    <section id="home" className="relative w-full min-h-screen overflow-hidden bg-[#faf6f2]">
       {/* Animated gradient background */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-dotgrid opacity-50" />
-        <div className="absolute -top-32 -left-24 w-[40rem] h-[40rem] rounded-full blur-[120px] opacity-50 animate-blob" style={{ background: 'radial-gradient(circle, #7c3aed, transparent 70%)' }} />
-        <div className="absolute top-1/3 left-1/4 w-[32rem] h-[32rem] rounded-full blur-[120px] opacity-30 animate-blob" style={{ background: 'radial-gradient(circle, #4c1d95, transparent 70%)', animationDelay: '8s' }} />
+        <div className="absolute inset-0 bg-dotgrid opacity-60" />
+        <div className="absolute -top-32 -left-24 w-[40rem] h-[40rem] rounded-full blur-[120px] opacity-45 animate-blob" style={{ background: 'radial-gradient(circle, #d49e8d, transparent 70%)' }} />
+        <div className="absolute top-1/3 left-1/4 w-[32rem] h-[32rem] rounded-full blur-[120px] opacity-35 animate-blob" style={{ background: 'radial-gradient(circle, #b08401, transparent 70%)', animationDelay: '8s' }} />
       </div>
 
       {/* Portrait blended into the background (right side) */}
@@ -100,14 +100,14 @@ const Hero = () => {
         <img
           src={profile.photo}
           alt={profile.name}
-          className="ghibli-portrait absolute bottom-0 right-0 h-[80%] md:h-[96%] w-full object-cover object-top"
+          className="ghibli-portrait absolute bottom-0 right-0 h-[62%] sm:h-[72%] md:h-[96%] w-full object-cover object-top"
         />
-        {/* purple duotone wash to stylize + match theme */}
-        <div className="absolute inset-0 mix-blend-soft-light opacity-40" style={{ background: 'linear-gradient(120deg, #7c3aed, transparent 60%)' }} />
-        {/* blend edges into the background */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#07060d] via-[#07060d]/50 to-transparent md:via-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#07060d] via-transparent to-[#07060d]/40" />
-        <div className="absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-[#07060d] to-transparent hidden md:block" />
+        {/* warm duotone wash to stylize + match theme */}
+        <div className="absolute inset-0 mix-blend-soft-light opacity-40" style={{ background: 'linear-gradient(120deg, #b08401, transparent 60%)' }} />
+        {/* blend edges into the cream background */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#faf6f2] via-[#faf6f2]/55 to-transparent md:via-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#faf6f2] via-transparent to-[#faf6f2]/50" />
+        <div className="absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-[#faf6f2] to-transparent hidden md:block" />
 
         {/* Speaking glow + equalizer over the portrait */}
         <div className={`absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 rounded-full ${isPlaying ? 'is-speaking' : ''}`} />
@@ -124,21 +124,21 @@ const Hero = () => {
       <audio ref={audioRef} src="/audio/intro.wav" preload="auto" onEnded={() => setIsPlaying(false)} />
 
       {/* Content (left) */}
-      <div className="relative z-20 max-w-7xl mx-auto px-6 md:px-12 min-h-screen flex flex-col justify-center pt-28 pb-24">
+      <div className="relative z-20 max-w-7xl mx-auto px-6 md:px-12 min-h-screen flex flex-col justify-end md:justify-center pb-16 pt-28 md:pt-28 md:pb-24">
         <div className="max-w-xl">
           <div data-aos="fade-up" className="flex items-center gap-3 mb-4">
-            <span className="h-px w-8" style={{ background: 'var(--accent-bright)' }} />
-            <span className="text-sm font-semibold tracking-widest uppercase" style={{ color: 'var(--accent-bright)' }}>I am</span>
+            <span className="h-px w-8" style={{ background: 'var(--accent)' }} />
+            <span className="text-sm font-semibold tracking-widest uppercase" style={{ color: 'var(--accent)' }}>I am</span>
           </div>
 
-          <h1 data-aos="fade-up" data-aos-delay="80" className="font-display text-white text-5xl md:text-7xl font-bold leading-[1.02] mb-3">
+          <h1 data-aos="fade-up" data-aos-delay="80" className="font-display text-5xl md:text-7xl font-bold leading-[1.02] mb-3" style={{ color: 'var(--text)' }}>
             {profile.name}
           </h1>
-          <div data-aos="fade-up" data-aos-delay="140" className="text-xl md:text-2xl font-bold mb-6 h-8" style={{ color: 'var(--accent-bright)' }}>
+          <div data-aos="fade-up" data-aos-delay="140" className="text-xl md:text-2xl font-bold mb-6 h-8" style={{ color: 'var(--accent)' }}>
             {profile.roles[roleIndex]}
           </div>
 
-          <p data-aos="fade-up" data-aos-delay="220" className="text-white/70 text-base md:text-lg font-medium mb-8 max-w-lg leading-relaxed">
+          <p data-aos="fade-up" data-aos-delay="220" className="text-base md:text-lg font-medium mb-8 max-w-lg leading-relaxed" style={{ color: 'var(--text-soft)' }}>
             {profile.tagline}
           </p>
 
@@ -146,29 +146,29 @@ const Hero = () => {
             <a href="#projects" className="px-7 py-3 rounded-full text-white font-semibold transition-all duration-300 transform hover:scale-105" style={{ background: 'var(--accent)', boxShadow: '0 8px 30px var(--accent-glow)' }}>
               View My Work
             </a>
-            <a href="#about" className="px-7 py-3 rounded-full bg-white/5 border border-white/20 text-white font-semibold hover:bg-white/10 transition-all duration-300 backdrop-blur-md">
+            <a href="#about" className="px-7 py-3 rounded-full bg-white/60 border border-[var(--border)] font-semibold hover:bg-white transition-all duration-300 backdrop-blur-md" style={{ color: 'var(--text)' }}>
               About Me
             </a>
 
             <button onClick={toggleIntro} className="group flex items-center gap-3 cursor-pointer" aria-label="Play AI voice intro">
-              <span className="w-12 h-12 rounded-full border border-white/25 bg-white/5 backdrop-blur-md flex justify-center items-center transition-all duration-500 group-hover:scale-110" style={{ background: isPlaying ? 'var(--accent)' : undefined, boxShadow: isPlaying ? '0 0 35px var(--accent-glow)' : 'none' }}>
+              <span className="w-12 h-12 rounded-full border border-[var(--border)] bg-white/60 backdrop-blur-md flex justify-center items-center transition-all duration-500 group-hover:scale-110" style={{ background: isPlaying ? 'var(--accent)' : undefined, boxShadow: isPlaying ? '0 0 35px var(--accent-glow)' : 'none' }}>
                 {isPlaying ? (
-                  <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" /></svg>
+                  <svg className="w-5 h-5" style={{ color: isPlaying ? '#fff' : 'var(--accent)' }} fill="currentColor" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" /></svg>
                 ) : (
-                  <svg className="w-5 h-5 text-white ml-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
+                  <svg className="w-5 h-5 ml-0.5" style={{ color: 'var(--accent)' }} fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
                 )}
               </span>
-              <span className="text-white/70 text-xs font-bold tracking-widest uppercase group-hover:text-white transition-colors">
+              <span className="text-xs font-bold tracking-widest uppercase transition-colors" style={{ color: 'var(--text-soft)' }}>
                 {isPlaying ? 'Stop' : 'Hear My Intro'}
               </span>
             </button>
           </div>
 
-          <div data-aos="fade-up" data-aos-delay="440" className="flex flex-wrap gap-8 mt-12">
+          <div data-aos="fade-up" data-aos-delay="440" className="flex flex-wrap gap-6 sm:gap-8 mt-12">
             {[['4+', 'AI Projects'], ['6mo', 'Freelance'], ['8.20', 'CGPA'], ['2x', 'Hackathons']].map(([n, l]) => (
               <div key={l}>
-                <div className="text-2xl md:text-3xl font-black text-white">{n}</div>
-                <div className="text-xs md:text-sm text-white/50 font-medium">{l}</div>
+                <div className="text-2xl md:text-3xl font-black" style={{ color: 'var(--text)' }}>{n}</div>
+                <div className="text-xs md:text-sm font-medium" style={{ color: 'var(--text-soft)' }}>{l}</div>
               </div>
             ))}
           </div>
@@ -177,8 +177,8 @@ const Hero = () => {
 
       {/* "tap to hear me" hint — disappears after first interaction */}
       {showHint && !isPlaying && (
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-30 flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/15 backdrop-blur-md text-white/70 text-xs font-medium animate-pulse pointer-events-none">
-          <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-30 flex items-center gap-2 px-4 py-2 rounded-full bg-white/70 border border-[var(--border)] backdrop-blur-md text-xs font-medium animate-pulse pointer-events-none" style={{ color: 'var(--text-soft)' }}>
+          <svg className="w-4 h-4" style={{ color: 'var(--accent)' }} fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
           Tap anywhere — I&apos;ll introduce myself
         </div>
       )}

@@ -26,7 +26,7 @@ const About = () => {
     <section
       id="about"
       className="w-full relative overflow-hidden font-sans"
-      style={{ background: 'linear-gradient(160deg, #0a0613 0%, #1a0b2e 55%, #0a0613 100%)' }}
+      style={{ background: 'linear-gradient(160deg, #2c1a12 0%, #3a261b 55%, #2c1a12 100%)' }}
     >
       {/* Mobile: faint static cartoon background behind content */}
       <div className="md:hidden absolute inset-0 z-0 pointer-events-none">
@@ -147,7 +147,7 @@ const About = () => {
 
       {/* wave divider into dark Skills */}
       <div className="absolute bottom-0 left-0 w-full pointer-events-none z-30 translate-y-1">
-        <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="w-full h-12 md:h-20" style={{ fill: '#07060d' }}>
+        <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="w-full h-12 md:h-20" style={{ fill: '#faf6f2' }}>
           <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C59.71,118.08,130.83,119.62,189.5,99.8,242.79,81.82,282.88,63.6,321.39,56.44Z" />
         </svg>
       </div>

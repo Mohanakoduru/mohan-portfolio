@@ -69,7 +69,7 @@ const Process = () => {
   return (
     <section
       ref={containerRef}
-      className="bg-white pt-24 pb-32 px-6 md:px-12 w-full relative overflow-hidden font-sans bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:80px_80px]"
+      className="bg-[#faf6f2] pt-24 pb-32 px-6 md:px-12 w-full relative overflow-hidden font-sans bg-[linear-gradient(to_right,#683b2b14_1px,transparent_1px),linear-gradient(to_bottom,#683b2b14_1px,transparent_1px)] bg-[size:80px_80px]"
     >
       <div className="max-w-6xl mx-auto relative md:h-[1350px]">
         {/* Header */}
@@ -87,7 +87,7 @@ const Process = () => {
 
         {/* Desktop animated line */}
         <svg className="hidden md:block absolute top-0 left-0 w-full h-[1350px] pointer-events-none z-0" viewBox="0 0 1000 1350" preserveAspectRatio="none">
-          <path d={PATH} fill="none" stroke="#ddd6fe" strokeWidth="2" strokeDasharray="8 10" />
+          <path d={PATH} fill="none" stroke="#d49e8d" strokeWidth="2" strokeDasharray="8 10" />
           <mask id="proc-mask">
             <motion.path d={PATH} fill="none" stroke="white" strokeWidth="20" style={{ pathLength }} />
           </mask>
@@ -96,7 +96,7 @@ const Process = () => {
 
         {/* Mobile animated line */}
         <svg className="md:hidden absolute top-0 left-1/2 -translate-x-1/2 w-4 h-full pointer-events-none z-0" viewBox="0 0 4 100" preserveAspectRatio="none">
-          <path d="M 2,0 L 2,100" fill="none" stroke="#ddd6fe" strokeWidth="4" strokeDasharray="4 6" vectorEffect="non-scaling-stroke" />
+          <path d="M 2,0 L 2,100" fill="none" stroke="#d49e8d" strokeWidth="4" strokeDasharray="4 6" vectorEffect="non-scaling-stroke" />
           <mask id="proc-mask-m">
             <motion.path d="M 2,0 L 2,100" fill="none" stroke="white" strokeWidth="4" style={{ pathLength }} vectorEffect="non-scaling-stroke" />
           </mask>

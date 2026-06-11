@@ -146,3 +146,52 @@ export const achievements = [
 ];
 
 export const navLinks = ["Home", "About", "Skills", "Projects", "Contact"];
+
+// ------------------------------------------------------------
+// Icon slugs for skills — maps to simpleicons.org CDN where a
+// brand logo exists; everything else falls back to an emoji.
+// ------------------------------------------------------------
+export const skillIcons = {
+  // languages
+  Python: { slug: "python" },
+  JavaScript: { slug: "javascript" },
+  HTML: { slug: "html5" },
+  CSS: { slug: "css3" },
+  SQL: { emoji: "🗄️" },
+  // AI & DS
+  "Machine Learning": { emoji: "🤖" },
+  "Data Analytics": { emoji: "📊" },
+  NLP: { emoji: "💬" },
+  "Explainable AI": { emoji: "🔍" },
+  LLMs: { emoji: "🧠" },
+  "Groq API": { emoji: "⚡" },
+  // libraries
+  Pandas: { slug: "pandas" },
+  NumPy: { slug: "numpy" },
+  "Scikit-learn": { slug: "scikitlearn" },
+  XGBoost: { emoji: "🌳" },
+  "Random Forest": { emoji: "🌲" },
+  ReportLab: { emoji: "📄" },
+  "OpenAI API": { slug: "openai" },
+  // web & deploy
+  Streamlit: { slug: "streamlit" },
+  FastAPI: { slug: "fastapi" },
+  "REST APIs": { emoji: "🔌" },
+  "React.js": { slug: "react" },
+  "Streamlit Cloud": { slug: "streamlit" },
+  MySQL: { slug: "mysql" },
+  // tools
+  Git: { slug: "git" },
+  GitHub: { slug: "github" },
+  "VS Code": { emoji: "🧩" },
+  Jupyter: { slug: "jupyter" },
+  "Google Colab": { slug: "googlecolab" },
+};
+
+// Per-project visuals (icon + accent from the palette).
+export const projectMeta = {
+  smartbuild: { icon: "🏗️", accent: "#b08401" },
+  "resume-analyzer": { icon: "📄", accent: "#d49e8d" },
+  "support-bot": { icon: "💬", accent: "#683b2b" },
+  "youtube-analytics": { icon: "📈", accent: "#b08401" },
+};
