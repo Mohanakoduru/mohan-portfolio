@@ -28,11 +28,11 @@ const ProjectCard = ({ project, index }) => {
     <div
       data-aos="fade-up"
       data-aos-delay={(index % 2) * 120}
-      className="group relative rounded-3xl overflow-hidden border border-[var(--border)] bg-white hover:-translate-y-1.5 hover:shadow-[0_30px_60px_rgba(104,59,43,0.14)] transition-all duration-500"
+      className="group relative rounded-3xl border border-[var(--border)] bg-white hover:-translate-y-1.5 hover:shadow-[0_30px_60px_rgba(104,59,43,0.14)] transition-all duration-500"
     >
       {/* Icon header band */}
       <div
-        className="relative h-32 flex items-center justify-between px-8 overflow-hidden"
+        className="relative h-32 flex items-center justify-between px-8 overflow-hidden rounded-t-3xl"
         style={{ background: `linear-gradient(135deg, ${meta.accent}, ${meta.accent}cc)` }}
       >
         <span className="text-6xl drop-shadow-sm">{meta.icon}</span>
@@ -40,7 +40,7 @@ const ProjectCard = ({ project, index }) => {
         <div className="absolute inset-0 bg-dotgrid-light opacity-40" />
       </div>
 
-      <div className="relative p-8 flex flex-col h-full">
+      <div className="relative p-8 flex flex-col">
         <div className="flex items-center justify-between mb-1">
           <h3 className="text-2xl font-black" style={{ color: 'var(--text)' }}>{project.name}</h3>
           <span className="text-xs font-mono" style={{ color: 'var(--text-soft)' }}>{project.year}</span>

@@ -28,12 +28,12 @@ const About = () => {
       className="w-full relative overflow-hidden font-sans"
       style={{ background: 'linear-gradient(160deg, #2c1a12 0%, #3a261b 55%, #2c1a12 100%)' }}
     >
-      {/* Mobile: faint static cartoon background behind content */}
+      {/* Mobile: faint static cutout behind content */}
       <div className="md:hidden absolute inset-0 z-0 pointer-events-none">
         <img
-          src="/cartoon.png"
+          src="/cartoon-nobg.png"
           alt=""
-          className="absolute right-0 bottom-0 h-full w-auto object-contain opacity-20"
+          className="absolute right-0 bottom-0 h-[85%] w-auto object-contain object-bottom opacity-30"
         />
       </div>
 
@@ -128,13 +128,13 @@ const About = () => {
           </div>
         </div>
 
-        {/* RIGHT — static (sticky) semi-transparent cartoon background */}
+        {/* RIGHT — static (sticky) cutout portrait, blended into the section */}
         <div className="hidden md:block">
-          <div className="sticky top-0 h-screen flex items-center justify-center pointer-events-none">
+          <div className="sticky top-0 h-screen flex items-end justify-center pointer-events-none">
             <img
-              src="/cartoon.png"
+              src="/cartoon-nobg.png"
               alt={profile.name}
-              className="max-h-[90vh] w-auto object-contain opacity-70 drop-shadow-[0_25px_60px_rgba(124,58,237,0.4)]"
+              className="h-[116vh] w-auto object-contain object-bottom drop-shadow-[0_25px_55px_rgba(0,0,0,0.45)]"
             />
           </div>
         </div>
