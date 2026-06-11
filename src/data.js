@@ -161,6 +161,19 @@ export const testimonial = {
 export const navLinks = ["Home", "About", "Skills", "Projects", "Achievements", "Contact"];
 
 // ------------------------------------------------------------
+// Contact-form delivery.
+//   EMAIL  → Web3Forms (free, no backend). Get a key in ~1 min:
+//            go to https://web3forms.com, enter mohankoduru.ai@gmail.com,
+//            copy the access key it emails you, and paste it below.
+//            Leave "" and the form will use WhatsApp instead.
+//   WHATSAPP fallback → country code + number, digits only.
+// ------------------------------------------------------------
+export const forms = {
+  web3formsKey: "", // <-- paste your Web3Forms access key here
+  whatsapp: "918639033832",
+};
+
+// ------------------------------------------------------------
 // Icon slugs for skills — maps to simpleicons.org CDN where a
 // brand logo exists; everything else falls back to an emoji.
 // ------------------------------------------------------------
