@@ -20,6 +20,8 @@ const SkillIcon = ({ name }) => {
 
 const Skills = () => {
   const marquee = [...coreSkills, ...coreSkills];
+  const logos = [...new Set(Object.values(skillIcons).filter((m) => m.slug).map((m) => m.slug))];
+  const logoStrip = [...logos, ...logos];
 
   return (
     <section id="skills" className="bg-[#faf6f2] py-24 px-6 md:px-12 w-full relative overflow-hidden">
@@ -47,6 +49,25 @@ const Skills = () => {
               </span>
             ))}
           </div>
+        </div>
+
+        {/* Animated logo strip */}
+        <div className="relative overflow-hidden py-2 mb-16" data-aos="fade-up">
+          <div className="flex gap-12 w-max animate-marquee items-center" style={{ animationDirection: 'reverse', animationDuration: '34s' }}>
+            {logoStrip.map((s, i) => (
+              <img
+                key={i}
+                src={`https://cdn.simpleicons.org/${s}`}
+                alt=""
+                loading="lazy"
+                className="h-9 w-9 object-contain grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                onError={(e) => { e.currentTarget.style.display = 'none'; }}
+              />
+            ))}
+          </div>
+          {/* fade edges */}
+          <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-[#faf6f2] to-transparent pointer-events-none" />
+          <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-[#faf6f2] to-transparent pointer-events-none" />
         </div>
 
         {/* Grouped chips */}

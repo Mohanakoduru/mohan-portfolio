@@ -77,7 +77,7 @@ export const projects = [
     description:
       "A machine-learning house construction-cost predictor using a stacking ensemble of Random Forest + XGBoost — R² of 0.9904 and MAPE of 4.87% across 10,000 records for 15 Indian cities. Engineered features like luxury score, location-area index and area-per-floor.",
     highlight: "R² 0.9904 · MAPE 4.87%",
-    link: "#",
+    link: "https://github.com/Mohanakoduru",
   },
   {
     id: "resume-analyzer",
@@ -88,7 +88,7 @@ export const projects = [
     description:
       "An ATS-based resume analyzer with automated PDF parsing, NLP keyword extraction and compatibility scoring — surfacing strengths, weaknesses and AI-driven tips. Supports batch processing and downloadable PDF reports.",
     highlight: "Batch ATS scoring + PDF reports",
-    link: "#",
+    link: "https://github.com/Mohanakoduru",
   },
   {
     id: "support-bot",
@@ -99,7 +99,7 @@ export const projects = [
     description:
       "An AI chatbot with multi-turn conversation memory and intent detection that automates FAQ handling — reducing manual support workload and improving customer satisfaction through contextual NLP responses.",
     highlight: "Memory + intent detection",
-    link: "#",
+    link: "https://github.com/Mohanakoduru",
   },
   {
     id: "youtube-analytics",
@@ -110,7 +110,7 @@ export const projects = [
     description:
       "An automated pipeline that extracts and analyzes YouTube channel metrics — tracking views, engagement and subscriber growth with actionable insights and exportable analytics reports.",
     highlight: "Automated insight reports",
-    link: "#",
+    link: "https://github.com/Mohanakoduru",
   },
 ];
 
@@ -138,14 +138,27 @@ export const process = [
 ];
 
 export const achievements = [
-  "Smart India Hackathon — National-level participant representing the college with an AI solution.",
-  "MSME National-Level Hackathon — presented a business + technology innovation.",
-  "Best Performer — Group Discussion & Story Creation, English Hackathon, LBRCE.",
-  "1st Place — JNTUK Inter-Collegiate Softball Tournament.",
-  "Professional Cricket — Krishna District Cricket Association & Hyderabad Cricket Club.",
+  { icon: "🏆", title: "Smart India Hackathon", text: "National-level participant representing the college with an AI solution.", tag: "National" },
+  { icon: "💡", title: "MSME National Hackathon", text: "Presented a business + technology innovation at a national-level event.", tag: "National" },
+  { icon: "🎤", title: "Best Performer — English Hackathon", text: "Group Discussion & Story Creation winner at LBRCE.", tag: "College" },
+  { icon: "🥇", title: "1st Place — Softball", text: "JNTUK Inter-Collegiate Softball Tournament champion.", tag: "Sports" },
+  { icon: "🏏", title: "Professional Cricket", text: "Krishna District Cricket Association & Hyderabad Cricket Club.", tag: "Sports" },
 ];
 
-export const navLinks = ["Home", "About", "Skills", "Projects", "Contact"];
+// Availability + a short client testimonial for credibility.
+export const availability = {
+  open: true,
+  text: "Available for AI/ML internships & freelance",
+};
+
+export const testimonial = {
+  quote:
+    "Mohan delivered a clean, well-documented ML solution ahead of schedule and explained every decision clearly. Reliable and genuinely skilled.",
+  author: "Freelance Client",
+  role: "Data project · 2025",
+};
+
+export const navLinks = ["Home", "About", "Skills", "Projects", "Achievements", "Contact"];
 
 // ------------------------------------------------------------
 // Icon slugs for skills — maps to simpleicons.org CDN where a
