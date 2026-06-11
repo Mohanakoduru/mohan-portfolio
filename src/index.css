@@ -1,0 +1,121 @@
+@import "tailwindcss";
+
+/* ============================================================
+   THEME — change --accent here to re-skin the whole site.
+   ============================================================ */
+:root {
+  --accent: #7c3aed;        /* violet-600 — primary accent  */
+  --accent-bright: #a855f7; /* violet-500 — highlights      */
+  --accent-soft: #8b5cf6;
+  --accent-glow: rgba(124, 58, 237, 0.55);
+  --bg: #07060d;            /* near-black with a violet tint */
+}
+
+@theme {
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-blob: blob 18s ease-in-out infinite;
+  --animate-marquee: marquee 28s linear infinite;
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+  }
+  @keyframes blob {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(40px, -30px) scale(1.1); }
+    66% { transform: translate(-30px, 25px) scale(0.95); }
+  }
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg);
+  color: #fff;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: #0a0815; }
+::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 6px; }
+::-webkit-scrollbar-thumb:hover { background: var(--accent-bright); }
+
+/* Selection */
+::selection { background: var(--accent); color: #fff; }
+
+/* AOS custom drop-bounce (kept from reference, used by the ID badge) */
+[data-aos="drop-bounce"] { opacity: 0; }
+[data-aos="drop-bounce"].aos-animate {
+  animation: dropBounce 1.2s cubic-bezier(0.28, 0.84, 0.42, 1) forwards;
+}
+@keyframes dropBounce {
+  0%   { transform: translateY(-300px); opacity: 0; }
+  50%  { transform: translateY(0); opacity: 1; }
+  65%  { transform: translateY(-40px); opacity: 1; }
+  80%  { transform: translateY(0); opacity: 1; }
+  90%  { transform: translateY(-15px); opacity: 1; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+/* Animated gradient text */
+.text-gradient {
+  background: linear-gradient(90deg, #fff, var(--accent-bright), #fff);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 5s linear infinite;
+}
+@keyframes shine { to { background-position: 200% center; } }
+
+/* Outlined hero text */
+.text-stroke {
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--accent-bright);
+}
+
+/* Subtle dotted grid background helper */
+.bg-dotgrid {
+  background-image: radial-gradient(rgba(255,255,255,0.06) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+/* Painterly "Ghibli-ish" stylization for the hero portrait */
+.ghibli-portrait {
+  filter: saturate(1.35) contrast(1.06) brightness(1.06)
+          drop-shadow(0 25px 60px rgba(124, 58, 237, 0.45));
+  animation: floatPortrait 7s ease-in-out infinite;
+}
+@keyframes floatPortrait {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-16px) scale(1.012); }
+}
+
+/* Speaking glow ring shown while the intro voice plays */
+@keyframes speakPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(168, 85, 247, 0.0); }
+  50% { box-shadow: 0 0 80px 10px rgba(168, 85, 247, 0.55); }
+}
+.is-speaking { animation: speakPulse 1.4s ease-in-out infinite; }
+
+/* Voice equalizer bars */
+@keyframes eq {
+  0%, 100% { transform: scaleY(0.3); }
+  50% { transform: scaleY(1); }
+}
+.eq-bar {
+  width: 4px;
+  border-radius: 4px;
+  background: var(--accent-bright);
+  transform-origin: bottom;
+  animation: eq 0.9s ease-in-out infinite;
+}
+
+.font-display { font-family: 'Playfair Display', Georgia, serif; }
