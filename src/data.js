@@ -15,7 +15,7 @@ export const profile = {
   email: "mohankoduru.ai@gmail.com",
   phone: "+91 8639033832",
   linkedin: "https://linkedin.com/in/mohan-koduru",
-  github: "https://github.com/", // TODO: add your GitHub username
+  github: "https://github.com/Mohanakoduru",
   photo: "/profile.jpg",
   resume: "/Mohan_Koduru_Resume.pdf",
 };
