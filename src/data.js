@@ -169,7 +169,7 @@ export const navLinks = ["Home", "About", "Skills", "Projects", "Achievements", 
 //   WHATSAPP fallback → country code + number, digits only.
 // ------------------------------------------------------------
 export const forms = {
-  web3formsKey: "", // <-- paste your Web3Forms access key here
+  web3formsKey: "7b224ed1-33e0-4f1f-8413-f0f9340f2fbd",
   whatsapp: "918639033832",
 };
 
