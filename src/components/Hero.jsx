@@ -25,7 +25,6 @@ const Hero = () => {
   const audioRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [roleIndex, setRoleIndex] = useState(0);
-  const [introDone, setIntroDone] = useState(false); // played once already?
   const [showHint, setShowHint] = useState(true);
 
   useEffect(() => {
@@ -84,23 +83,6 @@ const Hero = () => {
       playIntro();
     }
   };
-
-  // Auto-play the intro on the visitor's first interaction (browsers block
-  // sound before a user gesture). Fires once, then removes itself.
-  useEffect(() => {
-    if (introDone) return;
-    const handler = () => {
-      if (introDone) return;
-      setIntroDone(true);
-      playIntro();
-      remove();
-    };
-    const events = ['pointerdown', 'keydown', 'scroll', 'touchstart'];
-    const remove = () =>
-      events.forEach((e) => window.removeEventListener(e, handler));
-    events.forEach((e) => window.addEventListener(e, handler, { once: false, passive: true }));
-    return remove;
-  }, [introDone, playIntro]);
 
   return (
     <section id="home" className="relative w-full min-h-screen overflow-hidden bg-[#faf6f2]">
@@ -218,11 +200,11 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* "tap to hear me" hint — disappears after first interaction */}
+      {/* hint pointing to the intro button — hides once played */}
       {showHint && !isPlaying && (
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-30 flex items-center gap-2 px-4 py-2 rounded-full bg-white/70 border border-[var(--border)] backdrop-blur-md text-xs font-medium animate-pulse pointer-events-none" style={{ color: 'var(--text-soft)' }}>
           <svg className="w-4 h-4" style={{ color: 'var(--accent)' }} fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
-          Tap anywhere — I&apos;ll introduce myself
+          Click &ldquo;Hear My Intro&rdquo; for a quick hello
         </div>
       )}
     </section>
